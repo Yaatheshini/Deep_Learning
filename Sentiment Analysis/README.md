@@ -17,7 +17,8 @@ IMDB_Dataset.csv: Contains IMDB movie reviews with sentiment labels (positive/ne
 word_index.csv: Maps words to integer indices for encoding the text data.
 
 ### Dataset
-The dataset used in this project can be downloaded from "https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews".
+The dataset used in this project can be downloaded from
+"https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews".
 
 ### Overview
 1. Data Preparation: The dataset is loaded, and reviews are preprocessed by lowering the case, removing punctuation, and tokenizing into words.
