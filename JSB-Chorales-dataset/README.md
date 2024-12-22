@@ -1,38 +1,46 @@
-# JSB-Chorales-dataset
-Dataset for JSB Chorales at different temporal resolutions, with train, validation, test split from [Boulanger-Lewandowski (2012)][nicolas-data].
+# Music Generation with Transformer-Based GANs
 
-Three temporal resolutions are provided: quarter, 8th, 16th. These "quantizations" are created by retaining the pitches heard on the specified temporal grid.  Boulanger-Lewandowski (2012) uses a temporal resolution of quarter notes.
+This project implements a Transformer-based Generative Adversarial Network (GAN) for multi-track music generation using the **JSB Chorales Dataset**. It combines advanced deep learning techniques, including Transformers and GANs, to generate expressive and coherent musical sequences. 
 
-This dataset currently does not encode fermatas and also does not distinguish between held and repeated notes.
+## Features
+- **Data Preprocessing**: Handles padding and truncation of variable-length sequences for model training.
+- **Transformer-Based Models**:
+  - **Generator**: Produces multi-track music sequences.
+  - **Discriminator**: Evaluates generated sequences as real or fake.
+- **Positional Encoding**: Captures sequential information for the Transformer architecture.
+- **Custom MIDI Generation**: Converts model outputs into playable MIDI files.
+- **Loss Functions**:
+  - Generator: Encourages realistic sequence generation.
+  - Discriminator: Distinguishes real sequences from generated ones.
+- **Training Loop**: Iteratively trains the generator and discriminator while saving generated MIDI outputs.
 
-## To load the data:
+## Dataset
+The **JSB Chorales Dataset** is used and split into training, validation, and test sets. Sequence lengths vary and are preprocessed for consistent input to the model.
 
-In Python 2:
+## Dependencies
+- `numpy`
+- `torch`
+- `music21`
 
-```python
-import cPickle as pickle
-with open('jsb-chorales-16th.pkl', 'rb') as p:
-    data = pickle.load(p)
-```
+## Usage
+1. Preprocess the data:
+   - Pad or truncate sequences to the desired length.
+2. Initialize the **Transformer Generator** and **Discriminator**:
+   - Configure model parameters such as `d_model`, `num_heads`, and `num_layers`.
+3. Train the models:
+   - Use the provided training loop with a defined number of epochs.
+4. Generate MIDI files:
+   - Use the `generate_midi_from_sequence` function to produce MIDI outputs from the trained generator.
 
-In Python 3:
+## Model Highlights
+- **Generator**: Utilizes a Transformer with multi-head attention to generate coherent sequences across tracks.
+- **Discriminator**: Validates sequences using similar Transformer-based architecture with a binary output.
+- **Positional Encoding**: Enhances temporal awareness of the models, which is crucial for sequential data like music.
 
-```python
-import pickle
-with open('jsb-chorales-16th.pkl', 'rb') as p:
-    data = pickle.load(p, encoding="latin1")
-```
+## Output
+- Trained models generate multi-track MIDI files with expressive note dynamics and structure.
 
-From Boulanger-Lewandowski (2012): "This will load a dictionary with 'train', 'valid' and 'test' keys, with the corresponding values being a list of sequences. Each sequence is itself a list of time steps, and each time step is a list of the non-zero elements in the piano-roll at this instant (in MIDI note numbers, between 21 and 108 inclusive)".
-
-Additionally, the file `Jsb16thSeparated.npz` contains the same data in the format used in Coconet ([Huang & Cooijmans et al., 2017][coconet]).  This format is like the above format except that at each time step there are exactly four numbers; one pitch for each of the SATB voices. If a voice is silent at a given time step, its pitch is NaN. This file was created based on the data included with the source code from https://tardis.ed.ac.uk/~moray/harmony/, but it contains the same data with the same train/valid/test split as the Boulanger-Lewandowski files.
-
-## JSON formats
-
-To sidestep Pickle/Numpy oddities once and for all, all of the above are now also available in the more straightforward JSON format. For `Jsb16thSeparated.json`, silence is represented by a pitch of `-1` rather than `NaN`.
-
-## References:
-Boulanger-Lewandowski, N., Vincent, P., & Bengio, Y. (2012). Modeling Temporal Dependencies in High-Dimensional Sequences: Application to Polyphonic Music Generation and Transcription. Proceedings of the 29th International Conference on Machine Learning (ICML-12), 1159–1166.
-
-[nicolas-data]: http://www-etud.iro.umontreal.ca/~boulanni/icml2012
-[coconet]: https://ismir2017.smcnus.org/wp-content/uploads/2017/10/187_Paper.pdf
+## Future Work
+- Fine-tuning hyperparameters for improved generation quality.
+- Extending the architecture for polyphonic and higher-dimensional music datasets.
+- Incorporating additional evaluation metrics for generated music quality.
