@@ -18,6 +18,7 @@ word_index.csv: Maps words to integer indices for encoding the text data.
 
 ### Dataset
 The dataset used in this project can be downloaded from
+
 "https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews".
 
 ### Overview
