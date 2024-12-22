@@ -1,6 +1,6 @@
 # Deep Learning 
 
-These projects were created as a part of the UR2PhD Program that I was selected for and conducted by the University of Alberta in collaboration with the Computing Research Association (CRA). 
+These projects were created as a part of the *UR2PhD Program* that I was selected for and conducted by the University of Alberta in collaboration with the Computing Research Association (CRA). 
 
 This repository contains various deep learning projects exploring advanced neural network architectures, generative modelling, and natural language processing. Each project includes code, detailed research notes, and insights into model architecture and optimization techniques.
 
@@ -14,5 +14,3 @@ Explores tokenization and vectorization for musical notes, addressing challenges
 
 #### 3. IMDB Ratings Sentiment Analysis
 Deep learning techniques, including word embeddings and recurrent neural networks, are employed to classify movie reviews as positive or negative. Leverages preprocessing pipelines for tokenization and sequence padding, enabling efficient sentiment prediction. Highlights advancements in NLP model design and sentiment analysis scalability.
-
-This repository demonstrates deep learning applications across creative generation and data-driven decision-making domains.
