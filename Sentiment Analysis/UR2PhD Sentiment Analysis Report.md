@@ -21,14 +21,14 @@ Next, we preprocess the reviews to standardize the text. This process involves:
 
 The preprocessing function is defined as follows:
 
-| `def preprocess_text(text):     text = text.lower()  # Convert to lowercase     text = text.translate(str.maketrans('', '', string.punctuation))  # Remove punctuation         return text.split()  # Tokenize into words` |
+| `def preprocess_text(text):     text = text.lower()  # Convert to lowercase     text = text.translate(str.maketrans('', '', string.punctuation))  # Remove punctuation     return text.split()  # Tokenize into words` |
 | :---- |
 
 #### **Combining Reviews into a Single List**
 
 We combine all processed reviews into a single list of words using the following code:
 
-| `all_words = [] for review in df['review']:  # Assuming the reviews are in a column named 'review'         all_words.extend(preprocess_text(review))` |
+| `all_words = [] for review in df['review']:  # Assuming the reviews are in a column named 'review'     all_words.extend(preprocess_text(review))` |
 | :---- |
 
 #### **Creating a Vocabulary**
