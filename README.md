@@ -1,6 +1,6 @@
 # Deep Learning 
 
-These projects were created as a part of the *UR2PhD Program* that I was selected for and conducted by the University of Alberta in collaboration with the Computing Research Association (CRA). 
+*These projects were created as a part of the UR2PhD Program that I was selected for and conducted by the University of Alberta in collaboration with the Computing Research Association (CRA).* 
 
 This repository contains various deep learning projects exploring advanced neural network architectures, generative modelling, and natural language processing. Each project includes code, detailed research notes, and insights into model architecture and optimization techniques.
 
