@@ -7,6 +7,9 @@ This project processes MIDI files from the MAESTRO dataset, explicitly focusing 
 4. pandas
 5. matplotlib
 
+![piano_roll_5000_debug](https://github.com/user-attachments/assets/d60f2f73-ecf6-4c88-9d61-b7314229801b)
+
+
 ### Install dependencies:
 
 `pip install pretty_midi numpy pandas matplotlib`
