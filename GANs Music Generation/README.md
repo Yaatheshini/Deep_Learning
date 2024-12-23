@@ -2,6 +2,9 @@
 
 This project implements a Transformer-based Generative Adversarial Network (GAN) for multi-track music generation using the **JSB Chorales Dataset**. It combines advanced deep learning techniques, including Transformers and GANs, to generate expressive and coherent musical sequences. 
 
+<img width="764" alt="Screenshot 2024-12-22 at 10 00 13 PM" src="https://github.com/user-attachments/assets/e09f74e8-a684-4c8d-a4b9-e9d5881b077a" />
+
+
 ## Features
 - **Data Preprocessing**: Handles padding and truncation of variable-length sequences for model training.
 - **Transformer-Based Models**:
